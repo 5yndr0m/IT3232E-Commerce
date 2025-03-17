@@ -1,3 +1,4 @@
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -117,6 +118,61 @@ class EBook extends Book {
     }
 }
 
+//Audio books
+class AudioBook extends Book {
+    private int duration;
+    private String narrator;
+    
+    public AudioBook(String title, String author, String isbn, int duration, String narrator){
+        super(title, author, isbn);
+        this.duration = duration;
+        this.narrator = narrator;
+    }
+    
+    public int getDuration(){
+        return duration;
+    }
+    
+    public String getNarrator(){
+        return narrator;
+    }
+    
+    @Override
+    public String displayInfo(){
+        return super.displayInfo() + " Duration : " + duration + " | Narrator : " + narrator;
+    }
+    
+    public String playSample(){
+        return "Playing a sample of " + getTitle() + " narrated by " + narrator + "...";
+    }
+}
 
+class Library {
+    private String name;
+    private List<Book> books;
+    
+    public Library(String name) {
+        this.name = name;
+        this.books = new ArrayList<>();
+    }
+    
+    public String addBook(Book book) {
+        books.add(book);
+        return book.getTitle() + " has been added to " + name + ".";
+    }
+    
+    public String removeBook(String isbn) {
+        for(int i = 0; i < books.size(); i++) {
+            Book book = books.get(i);
+            if(book.getIsbn().equals(isbn)) {
+                Book removed = books.remove(i);
+                return removed.getTitle() + " has been removed from " + name + ".";
+            }
+        }
+        return "No Book with ISBN " + isbn + " found in " + name + ".";
+    }
+    
+    
+}
  
 
