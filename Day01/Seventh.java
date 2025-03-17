@@ -16,6 +16,13 @@ class Book {
         this.isbn = isbn;
         this.isAvailable = true;
     }
+    
+    public Book(String title, String author, String isbn) {
+        this.title = title;
+        this.author = author;
+        this.isbn = isbn;
+        this.isAvailable = true;
+    }
 
     public String getTitle() {
         return title;
