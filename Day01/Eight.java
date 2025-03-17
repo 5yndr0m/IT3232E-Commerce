@@ -90,3 +90,28 @@ class FruitProduct extends Product {
     }
 }
 
+class VegetableProduct extends Product {
+    private boolean isSeasonal;
+    private String farmSource;
+    
+    public VegetableProduct(int productId, String name, double price, int quantity, boolean isSeasonal, String farmSource){
+        super(productId, name, price, quantity);
+        this.isSeasonal = isSeasonal;
+        this.farmSource = farmSource;
+    }
+    
+    public boolean isSeasonal() {
+        return isSeasonal;
+    }
+    
+    public String getFarmSource() {
+        return farmSource;
+    }
+    
+    @Override
+    public String displayInfo() {
+        String seasonalStatus = isSeasonal ? "Seasonal" : "Non-seasonal";
+        return super.displayInfo() + " | " + seasonalStatus + " | Farm : " + farmSource;
+    }
+}
+
