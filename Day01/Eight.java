@@ -115,3 +115,27 @@ class VegetableProduct extends Product {
     }
 }
 
+class GroceryProduct extends Product {
+    private String brand;
+    private String expiryDate;
+    
+    public GroceryProduct(int productId, String name, double price, int quantity, String brand, String expiryDate) {
+        super(productId, name, price, quantity);
+        this.brand = brand;
+        this.expiryDate = expiryDate;
+    }
+    
+    public String getBrand() {
+        return brand;
+    }
+    
+    public String getExpiryDate() {
+        return expiryDate;
+    }
+    
+    @Override
+    public String displayInfo() {
+        return super.displayInfo() + " | Brand : " + brand + " | Expires : " + expiryDate;
+    }
+}
+
