@@ -65,3 +65,28 @@ class Product {
     }
 }
 
+class FruitProduct extends Product {
+    private String origin;
+    private boolean isOrganic;
+    
+    public FruitProduct(int productId, String name, double price, int quantity, String origin, boolean isOrganic){
+        super(productId, name, price, quantity);
+        this.origin = origin;
+        this.isOrganic = isOrganic;
+    }
+    
+    public String getOrigin() {
+        return origin;
+    }
+    
+    public boolean isOrganic() {
+        return isOrganic;
+    }
+    
+    @Override
+    public String displayInfo() {
+        String organicStatus = isOrganic ? "Organic" : "Non-organic";
+        return super.displayInfo() + " | Origin : " + origin + " | " + organicStatus;
+    }
+}
+
