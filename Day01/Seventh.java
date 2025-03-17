@@ -88,6 +88,35 @@ class PrintedBook extends Book {
   }
 }
 
+// digital books
+class EBook extends Book {
+    private  double fileSize;
+    private String format;
+    
+    public EBook(String title, String author, String isbn, double fileSize, String format){
+        super(title, author, isbn);
+        this.fileSize = fileSize;
+        this.format = format;
+    }
+    
+    public double getFileSie(){
+        return fileSize;
+    }
+    
+    public String getFormat(){
+        return format;
+    }
+    
+    @Override
+    public String displayInfo(){
+        return super.displayInfo() + " File Size : " + fileSize + " | Format : " + format;
+    }
+    
+    public String download(){
+        return "Downloading " + getTitle() + "." + format + " ( " + fileSize + "MB) .... "; 
+    }
+}
+
 
  
 
