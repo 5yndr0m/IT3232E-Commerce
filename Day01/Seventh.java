@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 //base class
-class Book {
+class Book{
 
   private String title;
   private String author;
@@ -20,7 +20,7 @@ class Book {
     return title;
   }
 
-  public Strig getAuthor(){
+  public String getAuthor(){
     return author;
   }
 
@@ -51,15 +51,43 @@ class Book {
   }
 
   public String displayInfo(){
-    return "Title : " + title + " | Author : " + author + " | ISBN : " + isbn + " | ";
+    return "Title : " + title + " | Author : " + author + " | ISBN : " + isbn + " |";
   }
 }
 
-class PrintedBook extend Book {
+// printed books
+class PrintedBook extends Book {
   private int pageCount;
   private String condition;
 
-
+  public PrintedBook(String title, String author, String isbn, int pageCount, String condition){
+      super(title, author, isbn);
+      this.pageCount = pageCount;
+      this.condition = condition;
+  }
+  
+  public int getPageCount(){
+      return pageCount;
+  }
+  
+  public String getCondition(){
+      return condition;
+  }
+  
+  @Override
+  public String displayInfo(){
+      return super.displayInfo() + " Page Count : " + pageCount + " | Condition " + condition;
+  }
+  
+  public String repairBook(){
+      if (!condition.equals("new")) {
+          condition = "good";
+          return getTitle() + " has been repaired and now in good condition. ";
+      }
+      return getTitle() + " is already in good condition";
+  }
 }
+
+
  
 
