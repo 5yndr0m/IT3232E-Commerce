@@ -33,3 +33,30 @@ class Student{
     System.out.println("Name : " + name + " | Registration No. : " + regNo + " | Mark : " + mark + " | " );
   }
 }
+
+public class Sixth{
+  
+  public static void main(String[] args){
+    
+    List<Student> students = new ArrayList<>();
+
+    students.add(new Student("Alice",100,85));
+    students.add(new Student("John",101,70));
+    students.add(new Student("Mike",102,55));
+    students.add(new Student("Jane",103,43));
+    students.add(new Student("Lucy",104,64));
+
+    double totalMarks = 0;
+    
+    for(Student student : students){
+      totalMarks += student.getMark();
+    }
+
+    double averageMarks = totalMarks / students.size();
+    System.out.println("Average Marks is : " + averageMarks);
+
+    for(Student student : students){
+      student.displayInfo();
+    }
+  }
+}
