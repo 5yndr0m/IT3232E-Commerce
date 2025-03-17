@@ -1,9 +1,8 @@
-public class Third{
+public class Third {
 
-  public static void main(String args[]){
-
-    for(int i = 10; i > 0; i--){
-      System.out.println(i);
+    public static void main(String args[]) {
+        for (int i = 10; i > 0; i--) {
+            System.out.println(i);
+        }
     }
-  }
 }
