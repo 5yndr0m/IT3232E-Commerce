@@ -172,7 +172,30 @@ class Library {
         return "No Book with ISBN " + isbn + " found in " + name + ".";
     }
     
+    public List<Book> searchByTitle(String title){
+        List<Book> results = new ArrayList<>();
+        for (Book book : books) {
+            if (book.getTitle().toLowerCase().contains(title.toLowerCase())){
+                results.add(book);
+            }
+        }
+        return results;
+    }
     
+    public String displayAllBooks() {
+        if (books.isEmpty()) {
+            return name + " has no books in the collection";
+        }
+        
+        StringBuilder result = new StringBuilder("Books in " + name + ":\n");
+        for (Book book : books) {
+            result.append("- ").append(book.displayInfo()).append("\n");
+        }
+        return result.toString();
+    }
 }
  
+public class Seventh {
+    
+}
 
