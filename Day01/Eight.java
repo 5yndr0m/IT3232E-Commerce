@@ -230,8 +230,10 @@ class RetailStore {
 
 public class Eight {
     public static void main(String[] args) {
+        //create retail store
         RetailStore freshMart = new RetailStore("Fresh Mart");
 
+        //create products
         FruitProduct apple = new FruitProduct(101, "Red Apple", 1.99, 100, "Washington", true);
         FruitProduct banana = new FruitProduct(102, "Banana", 0.99, 150, "Costa Rica", false);
         
@@ -241,6 +243,7 @@ public class Eight {
         GroceryProduct rice = new GroceryProduct(301, "Basmati Rice", 5.99, 30, "Golden Harvest", "2025-12-31");
         GroceryProduct pasta = new GroceryProduct(302, "Spaghetti Pasta", 2.49, 45, "Pasta King", "2026-06-30");
 
+        //add products
         System.out.println(freshMart.addProduct(apple));
         System.out.println(freshMart.addProduct(banana));
         System.out.println(freshMart.addProduct(carrot));
@@ -248,14 +251,19 @@ public class Eight {
         System.out.println(freshMart.addProduct(rice));
         System.out.println(freshMart.addProduct(pasta));
 
+        //display all products
         System.out.println(freshMart.displayAllProducts());
 
+        //edit a product
         System.out.println(freshMart.editProduct(101, 2.29, 120));
 
+        //restock
         System.out.println(freshMart.restockProduct(202, 25));
 
+        //delete
         System.out.println(freshMart.deleteProduct(302));
 
+        //display all fruits
         List<FruitProduct> fruits = freshMart.filterProductsByType(FruitProduct.class);
         System.out.println("\nFruits available:");
         for (FruitProduct fruit : fruits) {
