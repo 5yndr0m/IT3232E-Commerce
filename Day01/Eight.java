@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 class Product {
     private int productId;
@@ -139,3 +143,87 @@ class GroceryProduct extends Product {
     }
 }
 
+class RetailStore {
+    private String name;
+    private Map<Integer, Product> products;
+    
+    public RetailStore(String name) {
+        this.name = name;
+        this.products = new HashMap<>();
+    }
+    
+    public String addProduct(Product product) {
+        int productId = product.getProductId();
+        if (!products.containsKey(productId)) {
+            products.put(productId, product);
+            return "Product '" + product.getName() + "' added successfully.";
+        }
+        return "Product with ID " + productId + " already exists.";
+    }
+    
+    public String editProduct(int productId, Double price, Integer quantity) {
+        if (!products.containsKey(productId)) {
+            return "Product with ID " + productId + " not found.";
+        }
+        
+        Product product = products.get(productId);
+        
+        if (price != null) {
+            product.setPrice(price);
+        }
+        
+        if (quantity != null) {
+            product.setQuantity(quantity);
+        }
+        
+        return "Product '" + product.getName() + "' update successfully.";
+    }
+    
+    public String deleteProduct(int productId) {
+        if (products.containsKey(productId)) {
+            String productName = products.get(productId).getName();
+            products.remove(productId);
+            return "Product '" + productName + "' deleted succefully.";
+        }
+        return "Product with ID " + productId + " not found.";
+    }
+    
+    public Product getProduct(int productId) {
+        return products.get(productId);
+    }
+    
+    public String displayAllProducts() {
+        if (products.isEmpty()) {
+            return name + " has no products in stock.";
+        }
+        
+        StringBuilder result = new StringBuilder("Products available at " + name + ":\n");
+        for (Product product : products.values()) {
+            result.append(product.displayInfo()).append("\n");
+        }
+        return result.toString();
+    }
+    
+    public <T extends Product> List <T> filterProductsByType(Class<T> productType) {
+        List<T> filteredProducts = new ArrayList<>();
+        
+        for (Product product : products.values()) {
+            if (productType.isInstance(product)) {
+                filteredProducts.add(productType.cast(product));
+            }
+        }
+        
+        return filteredProducts;
+    }
+    
+    public String restockProduct(int productId, int amount) {
+        if (products.containsKey(productId)) {
+            Product product = products.get(productId);
+            if (product.addStock(amount)) {
+                return "Added " + amount + " units to '" + product.getName() + "'. New quantity: " + product.getQuantity();
+            }
+            return "Invalid amount for restocking.";
+        }
+        return "Product with ID " + prodcuId + " not found.";
+    }
+}
