@@ -224,6 +224,6 @@ class RetailStore {
             }
             return "Invalid amount for restocking.";
         }
-        return "Product with ID " + prodcuId + " not found.";
+        return "Product with ID " + productId + " not found.";
     }
 }
