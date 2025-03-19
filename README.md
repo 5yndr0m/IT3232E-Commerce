@@ -15,8 +15,8 @@ Contains a series of Java programming exercises covering various programming con
 ## Repository Structure
 ```
 .
-├── Day01/           # Java programming exercises
-└── README.md        # This file
+├── Day01/          
+└── README.md        
 ```
 
 ## Getting Started
