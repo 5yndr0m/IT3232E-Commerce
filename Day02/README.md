@@ -3,8 +3,8 @@
 This directory contains spring boot starter project and some riouting excercises.
 
 ### Excercises
-1. Create a simple route that displays a message. [#file](Day02/src/main/java/lk/ac/vau/fas/day2/controller/AppController.java)
-2. Create a route that displays student information.[#file](Day02/src/main/java/lk/ac/vau/fas/day2/controller/Strudents.java)
+1. Create a simple route that displays a message. [#file](src/main/java/lk/ac/vau/fas/day2/controller/AppController.java)
+2. Create a route that displays student information.[#file](src/main/java/lk/ac/vau/fas/day2/controller/Strudents.java)
 
 ## Getting Started
 Clone the Repo and Open project using Spring Tool Suite or other prefered method.
