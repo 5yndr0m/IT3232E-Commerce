@@ -12,10 +12,18 @@ Contains a series of Java programming exercises covering various programming con
 - Data structures
 - Class design and implementation
 
+
+### [Day 02 - Setting up Spring Boot project](Day02/README.md)
+Contains a pring boot project and some route configurarions.
+- Setting Up a Spring boot project
+- Display Different Content based on Route
+- Using Imports like RestController, RequestMapping, etc.
+
 ## Repository Structure
 ```
 .
 ├── Day01/          
+├── Day02/          
 └── README.md        
 ```
 
