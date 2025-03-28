@@ -12,12 +12,16 @@ Contains a series of Java programming exercises covering various programming con
 - Data structures
 - Class design and implementation
 
-
-### [Day 02 - Setting up Spring Boot project](Day02/README.md)
-Contains a pring boot project and some route configurarions.
+### [MISC - Initiating a Spring Boot project](SpringBootApp/README.md)
 - Setting Up a Spring boot project
-- Display Different Content based on Route
-- Using Imports like RestController, RequestMapping, etc.
+
+### [Day 02 - Routes, Outputing Data and Basics of SpringBoot](Day02/README.md)
+Contains a spring boot project based route configurarions and some functions to execute when routes were visited.
+ - Display Different Content based on Route
+ - Using Imports like RestController, RequestMapping, etc.
+ - Basics of Spring Boot
+
+
 
 ## Repository Structure
 ```
