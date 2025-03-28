@@ -1,10 +1,10 @@
-# Day 02 - Setting up Spring Boot project
+# MISC - Initiating a Spring Boot project
 
-This directory contains spring boot starter project and some riouting excercises.
+This directory contains spring boot starter project.
 
 ### Excercises
-1. Create a simple route that displays a message. [#file](src/main/java/lk/ac/vau/fas/day2/controller/AppController.java)
-2. Create a route that displays student information.[#file](src/main/java/lk/ac/vau/fas/day2/controller/Strudents.java)
+1. Initiate a new Spring Boot project.
+2. Get familiar with the project structure.
 
 ## Getting Started
 Clone the Repo and Open project using Spring Tool Suite or other prefered method.
@@ -12,8 +12,4 @@ Install the necessary dependencies using maven.
 Run the Applicartion.
 Visit the localhost:8080 in your browser.
 
-###Routes
-1. http://localhost:8080/app/msg
-2. http://localhost:8080/app/wall
-3. http://localhost:8080/student/details
 
