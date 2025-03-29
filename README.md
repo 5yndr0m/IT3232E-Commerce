@@ -28,8 +28,15 @@ Contains a spring boot project based route configurarions and some functions to 
 .
 ├── Day01/          
 ├── Day02/          
+├── Day03/          
+├── IT3232Practicals.postman_collection.json/          
+├── API.md/          
 └── README.md        
 ```
 
 ## Getting Started
 Each practical session is organized in its own directory with detailed instructions in the respective README files.
+
+## API Documentation
+[Api Documentation](API.md)
+[if you fancy a postman collection](IT3232Practicals.postman_collection.json)
