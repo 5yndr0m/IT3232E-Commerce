@@ -28,4 +28,9 @@ public class AppController {
 	public String displayAge(@PathVariable("ag") int age) {
 		return "Age is " + age;
 	}
+	
+	@GetMapping("/info/{nm},{ag},{id}")
+	public String displayInfo(@PathVariable("nm") String name, @PathVariable("ag") int age, @PathVariable("id") int index) {
+		return "Name : " + name + " \nAge : " + age + " \nIndex : " + index;
+	}
 }
