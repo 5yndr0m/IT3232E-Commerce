@@ -1,6 +1,7 @@
 package lk.ac.vau.fas.sbapp.controller;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -60,6 +61,12 @@ public class StudentController {
 			}
 		}
 		return filterStudents;
+	}
+	
+	@GetMapping("/sort/gpa")
+	public List<Student> sortByGPA(){
+		students.sort(Comparator.comparing(Student::getGpa));
+		return students;
 	}
 	
 }
