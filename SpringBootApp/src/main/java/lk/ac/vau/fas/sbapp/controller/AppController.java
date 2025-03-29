@@ -1,4 +1,4 @@
-package lk.ac.vau.fas.day2.controller;
+package lk.ac.vau.fas.sbapp.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,8 +13,8 @@ public class AppController {
 		return "Hello Spring Boot";
 	}
 	
-	@GetMapping("/wall")
-	public String wall() {
-		return "You hit a wall";
+	@GetMapping("/name")
+	public String displayName() {
+		return "I'm John Doe";
 	}
 }

@@ -1,13 +1,13 @@
-package lk.ac.vau.fas.day2;
+package lk.ac.vau.fas.sbapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Day02Application {
+public class SpringBootAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Day02Application.class, args);
+		SpringApplication.run(SpringBootAppApplication.class, args);
 	}
 
 }

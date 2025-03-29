@@ -1,10 +1,10 @@
-package lk.ac.vau.fas.day2;
+package lk.ac.vau.fas.sbapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Day02ApplicationTests {
+class SpringBootAppApplicationTests {
 
 	@Test
 	void contextLoads() {

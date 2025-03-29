@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>lk.ac.vau.fas</groupId>
-	<artifactId>Day02</artifactId>
+	<artifactId>SpringBootApp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Day02</name>
+	<name>SpringBootApp</name>
 	<description>Day 2 practicals</description>
 	<url/>
 	<licenses>
