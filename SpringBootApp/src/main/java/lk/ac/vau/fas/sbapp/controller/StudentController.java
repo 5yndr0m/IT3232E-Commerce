@@ -49,4 +49,17 @@ public class StudentController {
 		}
 		return null;
 	}
+	
+	List<Student> filterStudents = new ArrayList<Student>();
+	
+	@GetMapping("/filter/age/{low},{high}")
+	public List<Student> filterStudentByAge(@PathVariable("low") int low, @PathVariable("high") int high) {
+		for(Student student : students) {
+			if(student.getAge() >= low && student.getAge() <= high) {
+				filterStudents.add(student);
+			}
+		}
+		return filterStudents;
+	}
+	
 }
