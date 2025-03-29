@@ -79,4 +79,19 @@ public class StudentController {
 			return "Error : " + e.getMessage();
 		}
 	}
+	
+	@GetMapping("/delete/{id}")
+	public String deleteStudent(@PathVariable("id") String index) {
+		try {
+			for(Student student:students) {
+				if(student.getRegNo().equals(index)) {
+					students.remove(student);
+					return "Student removed succesfully";
+				}
+			}
+			return "Student not found";
+		} catch(Exception e) {
+			return "Error : " + e.getMessage();
+		}
+	}
 }
