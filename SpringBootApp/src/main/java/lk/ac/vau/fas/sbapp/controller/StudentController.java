@@ -80,6 +80,36 @@ public class StudentController {
 		}
 	}
 	
+	@GetMapping("/update/{id},{field},{value}")
+	public String updateStudent(@PathVariable("id") String index, @PathVariable("field") String field, @PathVariable("value") String value){
+		try {
+			for(Student student:students) {
+				if(student.getRegNo().equals(index)) {
+					switch(field.toLowerCase()) {
+					case "name":
+						student.setName(value);
+						break;
+					case "age":
+						student.setAge(Integer.parseInt(value));
+						break;
+					case "regNo":
+						student.setRegNo(value);
+						break;
+					case "course":
+						student.setCourse(value);
+						break;
+					case "gpa":
+						student.setGpa(Double.parseDouble(value));
+					}
+					return "Student updated succesfully";
+				}
+			}
+			return "Student not found";
+		} catch(Exception e) {
+			return "Error : " + e.getMessage();
+		}
+	}
+	
 	@GetMapping("/delete/{id}")
 	public String deleteStudent(@PathVariable("id") String index) {
 		try {
