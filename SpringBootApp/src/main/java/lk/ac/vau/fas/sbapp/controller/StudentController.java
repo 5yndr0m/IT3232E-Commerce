@@ -69,4 +69,14 @@ public class StudentController {
 		return students;
 	}
 	
+	@GetMapping("/create/{nm},{ag},{id},{co},{gpa}")
+	public String createStudent(@PathVariable("nm") String name,@PathVariable("ag") int age,@PathVariable("id") String index,@PathVariable("co") String course,@PathVariable("gpa") double gpa) {
+		try {
+		Student newStu = new Student(name,age,index,course,gpa);
+		students.add(newStu);
+		return "Student added succefully";
+		} catch(Exception e){
+			return "Error : " + e.getMessage();
+		}
+	}
 }
