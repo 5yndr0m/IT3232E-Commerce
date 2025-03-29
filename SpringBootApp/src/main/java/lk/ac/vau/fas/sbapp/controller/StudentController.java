@@ -21,6 +21,14 @@ public class StudentController {
 	
 	List<Student> students = new ArrayList<Student>();
 	
+	public StudentController() {
+		students.add(s1);
+		students.add(s2);
+		students.add(s3);
+		students.add(s4);
+		students.add(s5);
+	}
+	
 	@GetMapping("/studetails")
 	public Student getStudentDetails() {
 		return s1;
