@@ -1,5 +1,8 @@
 package lk.ac.vau.fas.sbapp.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +18,8 @@ public class StudentController {
 	Student s3 = new Student("Jhon",22,"IT1045","ML",3.1);
 	Student s4 = new Student("Jack",24,"IT1030","AI",2.9);
 	Student s5 = new Student("Brian",22,"IT1060","DS",3.6);
+	
+	List<Student> students = new ArrayList<Student>();
 	
 	@GetMapping("/studetails")
 	public Student getStudentDetails() {
