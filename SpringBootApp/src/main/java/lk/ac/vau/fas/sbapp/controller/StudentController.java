@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,5 +33,20 @@ public class StudentController {
 	@GetMapping("/studetails")
 	public Student getStudentDetails() {
 		return s1;
+	}
+	
+	@GetMapping("/info/all")
+	public List<Student> getAllDetails(){
+		return students;
+	}
+	
+	@GetMapping("/info/{id}")
+	public Student getStudentById(@PathVariable("id") String index) {
+		for(Student student : students) {
+			if(student.getRegNo().equals(index)) {
+				return student;
+			}
+		}
+		return null;
 	}
 }
