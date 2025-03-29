@@ -74,7 +74,7 @@ public class StudentController {
 		try {
 		Student newStu = new Student(name,age,index,course,gpa);
 		students.add(newStu);
-		return "Student added succefully";
+		return "Student added succesfully";
 		} catch(Exception e){
 			return "Error : " + e.getMessage();
 		}
