@@ -4,7 +4,7 @@ This directory contains excercises completed during Day 05.
 
 ### Excercises
 1. Use generics to create a CRUD operation for all models.
-2. Use the generic created in Student and Course controllers..
+2. Use the generic created in Student and Course controllers.
 3. Create a new Instructor model and controller using generics.
 
 ## Getting Started
