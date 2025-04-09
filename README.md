@@ -20,8 +20,24 @@ Contains a spring boot project based route configurarions and some functions to 
  - Display Different Content based on Route
  - Using Imports like RestController, RequestMapping, etc.
  - Basics of Spring Boot
+ 
+### [Day 03 - Path Variables, Models and Data handling](Day03/README.md)
+contains excercises completed during Day 03.
+ - Use path variables to send data.
+ - Create a Student model and make proper constructors, getters and setters.
+ - Create CRUD operations for the Students model.
 
-
+### [Day 04 - GET, POST, PUT, and DELETE Requests](Day04/README.md)
+contains excercises completed during Day 04.
+ - Proper use of Different HTTP Methods.
+ - Create a Course model and make proper constructors, getters and setters.
+ - Create CRUD operations for the Course model.
+ 
+### [Day 05 - Use of Generics](Day05/README.md)
+contains excercises completed during Day 05.
+ - Use generics to create a CRUD operation for all models.
+ - Use the generic created in Student and Course controllers..
+ - Create a new Instructor model and controller using generics.
 
 ## Repository Structure
 ```
@@ -29,6 +45,8 @@ Contains a spring boot project based route configurarions and some functions to 
 ├── Day01/          
 ├── Day02/          
 ├── Day03/          
+├── Day04/          
+├── Day05/          
 ├── IT3232Practicals.postman_collection.json/          
 ├── API.md/          
 └── README.md        
