@@ -6,6 +6,8 @@ import java.util.List;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 
 @Entity
@@ -19,7 +21,10 @@ public class Project {
 	private String projectName;
 	private Date startDate;
 	private Date deadLine;
-	@ManyToMany(mappedBy = "projects")
+	@ManyToMany
+	@JoinTable(name="project_assignments", 
+	joinColumns = @JoinColumn(name ="emp_id"), 
+	inverseJoinColumns = @JoinColumn(name="pro_id"))
 	private List<Employee>employees;
 	
 //	Constructor

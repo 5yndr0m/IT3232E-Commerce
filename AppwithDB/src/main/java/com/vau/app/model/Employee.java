@@ -22,7 +22,7 @@ public class Employee {
 	private String address;
 	@ManyToOne
 	private Department department;
-	@ManyToMany
+	@ManyToMany(mappedBy = "employees")
 	private List<Project>projects;
 	@OneToOne
 	private Insurence insurence;
