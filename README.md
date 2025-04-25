@@ -38,15 +38,25 @@ contains excercises completed during Day 05.
  - Use generics to create a CRUD operation for all models.
  - Use the generic created in Student and Course controllers..
  - Create a new Instructor model and controller using generics.
+ 
+### [Day 06 - Connecting to Database](Day06/README.md)
+contains excercises completed during Day 06.
+ - Create new App with mySQL Driver and Spring Data JPA dependencies.
+ - Populate application.properties with the database credentials.
+ - Create Department, Employee, Project, and Insurance tables.
+ - Add the proper relationships between the tables.
+ - Run the project and observe the tables in the database.
 
 ## Repository Structure
 ```
 .
+├── AppwithDB/          
 ├── Day01/          
 ├── Day02/          
 ├── Day03/          
 ├── Day04/          
 ├── Day05/          
+├── Day06/          
 ├── IT3232Practicals.postman_collection.json/          
 ├── API.md/          
 └── README.md        
