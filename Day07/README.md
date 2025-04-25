@@ -1,4 +1,4 @@
-# Day 06 - Connecting to Database
+# Day 07 - Parent class and JoinTable annotation
 
 This directory contains excercises completed during Day 07. It is a continueation of Day06 excercises.
 
