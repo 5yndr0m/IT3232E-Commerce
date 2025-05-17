@@ -21,7 +21,12 @@ public class Department {
 	@OneToMany(mappedBy = "department")
 	private List<Employee>employees;
 	
-	//	Constructor
+//	Constructor
+	
+	public Department() {
+		
+	}
+	
 	public Department(String depID, String depName, Date established) {
 		super();
 		this.depID = depID;
