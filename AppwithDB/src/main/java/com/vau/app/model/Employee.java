@@ -72,6 +72,10 @@ public class Employee {
 	}
 	
 //	Constructor
+	public Employee() {
+		
+	}
+	
 	public Employee(String empID, String name, int age, double salary, String address) {
 		super();
 		this.empID = empID;

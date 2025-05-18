@@ -28,6 +28,11 @@ public class Project {
 	private List<Employee>employees;
 	
 //	Constructor
+	
+	public Project() {
+		
+	}
+	
 	public Project(String projectID, String projectName, Date startDate, Date deadLine, List<Employee> employees) {
 		super();
 		this.projectID = projectID;
