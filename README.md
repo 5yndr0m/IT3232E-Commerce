@@ -57,6 +57,13 @@ This directory contains excercises completed during Day 08.
  - Create controllers for models.
  - Use response entities to wrap the crud methods.
 
+### [Day 09 - Exception Handling](Day09/README.md)
+This directory contains excercises completed during Day 09.
+ - Create GenericExceptionHandler and a ErrorResponse model.
+ - Create seperate exception handler methods.
+ - Use the exception handlers in the services.
+ - Create a common exception handler and use it.
+
 ### [MISC - Initiating a Spring Boot project](SpringBootApp/README.md)
 - Setting Up a Spring boot project
 
