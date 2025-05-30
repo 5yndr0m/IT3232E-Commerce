@@ -3,10 +3,13 @@ package com.vau.app.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import com.vau.app.model.Department;
 import com.vau.app.repo.DepartmentRepo;
+
+import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class DepartmentService {
@@ -19,16 +22,19 @@ public class DepartmentService {
 	}
 	
 	public Department getDept(String dep_id) {
+		if(repo.findById(dep_id).isEmpty()) {
+			throw new EntityNotFoundException("Department not found");
+		}
 		return repo.findById(dep_id).get();
 	}
 	
 	public String addDept(Department dept) {
-		if(repo.findById(dept.getDepID()).isEmpty()) {
-			repo.save(dept);
-			return "New Department Added";
+		if(repo.findById(dept.getDepID()).isPresent()) {
+			throw new DuplicateKeyException("Department exists");
 		}
 		
-		return "Department with ID: " + dept.getDepID() + " exists";
+		repo.save(dept);
+		return "New Department Added";
 	}
 	
 	public String updateDept(String id, Department dept) {
@@ -36,7 +42,7 @@ public class DepartmentService {
 			repo.save(dept);
 			return "Department Updated";
 		}
-		return "Department with ID: " + id + "does not exists"; 
+		throw new EntityNotFoundException("Department not found");
 	}
 	
 	public String deleteDept(String id) {
@@ -44,8 +50,23 @@ public class DepartmentService {
 			repo.deleteById(id);
 			return "Department Removed";
 		}
-		return "Department with ID: " + id + "does not exists"; 
+		throw new EntityNotFoundException("Department not found");
 		
+	}
+	
+	public List<String> getDepartmentNames(){
+		if(repo.getDepartmentNames().isEmpty()) {
+			throw new EntityNotFoundException("No Department found");
+		}
+		return repo.getDepartmentNames();
+	}
+	
+	public List<Department> findByName(String name){
+		if(repo.findByName(name).isEmpty()) {
+			throw new EntityNotFoundException("No Department found");
+		}
+		
+		return repo.findByName(name);
 	}
 
 }

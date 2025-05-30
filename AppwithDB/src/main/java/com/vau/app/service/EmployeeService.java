@@ -3,10 +3,13 @@ package com.vau.app.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import com.vau.app.model.Employee;
 import com.vau.app.repo.EmployeeRepo;
+
+import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class EmployeeService {
@@ -19,6 +22,9 @@ public class EmployeeService {
 	}
 	
 	public Employee getEmp(String id) {
+		if(repo.findById(id).isEmpty()) {
+			throw new EntityNotFoundException("Employee not found");
+		}
 		return repo.findById(id).get();
 	}
 	
@@ -27,7 +33,7 @@ public class EmployeeService {
 			repo.save(emp);
 			return "Employee Added"; 
 		}
-		return "Employee already exists";
+		throw new DuplicateKeyException("Employee exists");
 	}
 	
 	public String updateEmp(String id, Employee emp) {
@@ -35,7 +41,7 @@ public class EmployeeService {
 			repo.save(emp);
 			return "Employee Updated";
 		}
-		return "Employee not found";
+		throw new EntityNotFoundException("Employee not found");
 	}
 	
 	public String removeEmp(String id) {
@@ -44,6 +50,17 @@ public class EmployeeService {
 			return "Employee removed";
 		}
 		
-		return "Employee not found";
+		throw new EntityNotFoundException("Employee not found");
+	}
+	
+	public List<Employee> findInRange(int min, int max){
+		if(repo.findInRange(min, max).isEmpty()) {
+			throw new EntityNotFoundException("Employees not found in that salary range");
+		}
+		return repo.findInRange(min, max);
+	}
+	
+	public Employee findYoungest() {
+		return repo.findYoungest();
 	}
 }
