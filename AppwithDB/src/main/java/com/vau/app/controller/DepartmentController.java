@@ -30,36 +30,31 @@ public class DepartmentController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<?> getDept(@PathVariable("id") String dep_id){
-		Department dep = service.getDept(dep_id);
-		if(dep == null) {
-			return new ResponseEntity<>("Department with ID: " + dep_id + " not found", HttpStatus.NOT_FOUND);
-		}
 		return new ResponseEntity<>(service.getDept(dep_id), HttpStatus.OK);
+	}
+	
+	@GetMapping("/getby/names")
+	public ResponseEntity<List<String>> getDeptNames(){
+		return new ResponseEntity<List<String>>(service.getDepartmentNames(), HttpStatus.OK);
+	}
+	
+	@GetMapping("/findby/name")
+	public ResponseEntity<List<Department>> findByName(String name){
+		return new ResponseEntity<List<Department>>(service.findByName(name), HttpStatus.OK);
 	}
 	
 	@PostMapping("/create")
 	public ResponseEntity<String> addDept(@RequestBody Department dept){
-		if(dept != null) {
-			return new ResponseEntity<String>(service.addDept(dept), HttpStatus.OK);
-		}
-		return new ResponseEntity<String>("No data provided", HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<String>(service.addDept(dept), HttpStatus.OK);
 	}
 	
 	@PutMapping("/update/{id}")
 	public ResponseEntity<String> updateDept(@PathVariable("id") String id, @RequestBody Department dept){
-		if(dept != null) {
-			return new ResponseEntity<String>(service.updateDept(id, dept), HttpStatus.OK);
-		}
-		
-		return new ResponseEntity<String>("No data provided", HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<String>(service.updateDept(id, dept), HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/remove/{id}")
 	public ResponseEntity<String> deleteDept(@PathVariable("id") String id){
-		if(id != null) {
-			return new ResponseEntity<String>(service.deleteDept(id), HttpStatus.OK);
-		}
-		
-		return new ResponseEntity<String>("No data provided", HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<String>(service.deleteDept(id), HttpStatus.OK);
 	}
 }
