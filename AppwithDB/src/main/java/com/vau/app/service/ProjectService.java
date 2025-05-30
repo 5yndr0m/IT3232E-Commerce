@@ -3,10 +3,13 @@ package com.vau.app.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 import com.vau.app.model.Project;
 import com.vau.app.repo.ProjectRepo;
+
+import jakarta.persistence.EntityNotFoundException;
 
 @Service
 public class ProjectService {
@@ -19,6 +22,9 @@ public class ProjectService {
 	}
 	
 	public Project getProj(String id) {
+		if(repo.findById(id).isEmpty()) {
+			throw new EntityNotFoundException("Project not found");
+		}
 		return repo.findById(id).get();
 	}
 	
@@ -28,7 +34,7 @@ public class ProjectService {
 			return "Project Addded";
 		}
 		
-		return "Project exists";
+		throw new DuplicateKeyException("Project exists");
 	}
 	
 	public String updateProj(String id, Project proj) {
@@ -36,7 +42,7 @@ public class ProjectService {
 			repo.save(proj);
 			return "Project Updated";
 		}
-		return "Project not found";
+		throw new EntityNotFoundException("Project not found");
 	}
 	
 	public String removeProj(String id) {
@@ -44,6 +50,6 @@ public class ProjectService {
 			repo.deleteById(id);
 			return "Project removed";
 		}
-		return "Project not found";
+		throw new EntityNotFoundException("Project not found");
 	}
 }
