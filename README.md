@@ -63,6 +63,17 @@ This directory contains excercises completed during Day 09.
  - Create seperate exception handler methods.
  - Use the exception handlers in the services.
  - Create a common exception handler and use it.
+ 
+### [Day 10 - Methods with custome queries](Day10/README.md)
+This directory contains excercises completed during Day 10.
+1. Create a abstract method in DepartmentRepo to retrieve all department names.
+2. Write the SQL Query to retireve all department names under annotation @Query.
+3. Implement the method in DepartmentService and Map it in DepartmentController.
+4. Create the methods for followig scenarios.
+    a. Retrieve department data using given department name.
+    b. Retrieve Employees within given salary range.
+    c. Retrieve Employees within a department using the department id.
+    d. Retrieve the youngest Employee data.
 
 ### [MISC - Initiating a Spring Boot project](SpringBootApp/README.md)
 - Setting Up a Spring boot project
